@@ -44,18 +44,18 @@ endif()
 # Install Recast&Detour libraries
 install(DIRECTORY "${RECAST_INCLUDE_PATH}/recast" DESTINATION include/system)
 file(GLOB libcarla_carla_recastlib "${RECAST_LIB_PATH}/*.*")
-install(FILES ${libcarla_carla_recastlib} DESTINATION lib)
+# install(FILES ${libcarla_carla_recastlib} DESTINATION lib)
 
 # Install rpclib (install in system folder to avoid extra warnings).
 install(DIRECTORY "${RPCLIB_INCLUDE_PATH}/rpc" DESTINATION include/system)
 file(GLOB libcarla_carla_rpclib "${RPCLIB_LIB_PATH}/*.*")
-install(FILES ${libcarla_carla_rpclib} DESTINATION lib)
+# install(FILES ${libcarla_carla_rpclib} DESTINATION lib)
 
 # Install boost headers (install in system folder to avoid extra warnings).
 # @todo Remove boost from public interface of LibCarla.client.
 install(DIRECTORY "${BOOST_INCLUDE_PATH}/boost" DESTINATION include/system)
 file(GLOB boost_libraries "${BOOST_LIB_PATH}/*.*")
-install(FILES ${boost_libraries} DESTINATION lib)
+# install(FILES ${boost_libraries} DESTINATION lib)
 
 # Windows need libpng alongside with zlib to be installed
 if (WIN32)
